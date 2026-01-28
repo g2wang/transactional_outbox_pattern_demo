@@ -1,0 +1,125 @@
+2026-01-28T21:57:12.036571690Z 
+2026-01-28T21:57:12.036722940Z   .   ____          _            __ _ _
+2026-01-28T21:57:12.036725815Z  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+2026-01-28T21:57:12.036727231Z ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+2026-01-28T21:57:12.036728523Z  \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+2026-01-28T21:57:12.036729648Z   '  |____| .__|_| |_|_| |_\__, | / / / /
+2026-01-28T21:57:12.036730690Z  =========|_|==============|___/=/_/_/_/
+2026-01-28T21:57:12.036731815Z 
+2026-01-28T21:57:12.037035773Z  :: Spring Boot ::                (v4.0.2)
+2026-01-28T21:57:12.037239481Z 
+2026-01-28T21:57:12.407544106Z 2026-01-28T21:57:12.406Z  INFO 1 --- [transactional-outbox-demo] [           main] com.example.outbox.OutboxApplication     : Starting OutboxApplication v0.0.1-SNAPSHOT using Java 25.0.1 with PID 1 (/app/app.jar started by root in /app)
+2026-01-28T21:57:12.427593315Z 2026-01-28T21:57:12.427Z  INFO 1 --- [transactional-outbox-demo] [           main] com.example.outbox.OutboxApplication     : No active profile set, falling back to 1 default profile: "default"
+2026-01-28T21:57:14.789037733Z 2026-01-28T21:57:14.788Z  INFO 1 --- [transactional-outbox-demo] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-01-28T21:57:14.908933274Z 2026-01-28T21:57:14.908Z  INFO 1 --- [transactional-outbox-demo] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 100 ms. Found 2 JPA repository interfaces.
+2026-01-28T21:57:16.144048192Z 2026-01-28T21:57:16.143Z  INFO 1 --- [transactional-outbox-demo] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
+2026-01-28T21:57:16.165627858Z 2026-01-28T21:57:16.165Z  INFO 1 --- [transactional-outbox-demo] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-01-28T21:57:16.165790692Z 2026-01-28T21:57:16.165Z  INFO 1 --- [transactional-outbox-demo] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.15]
+2026-01-28T21:57:16.235757983Z 2026-01-28T21:57:16.235Z  INFO 1 --- [transactional-outbox-demo] [           main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 3497 ms
+2026-01-28T21:57:16.654916109Z 2026-01-28T21:57:16.654Z  INFO 1 --- [transactional-outbox-demo] [           main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-01-28T21:57:16.838277817Z 2026-01-28T21:57:16.838Z  INFO 1 --- [transactional-outbox-demo] [           main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.1.Final
+2026-01-28T21:57:18.023282693Z 2026-01-28T21:57:18.023Z  INFO 1 --- [transactional-outbox-demo] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-01-28T21:57:18.091527609Z 2026-01-28T21:57:18.091Z  INFO 1 --- [transactional-outbox-demo] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-01-28T21:57:19.172025901Z 2026-01-28T21:57:19.171Z  WARN 1 --- [transactional-outbox-demo] [           main] org.hibernate.orm.jdbc.error             : HHH000247: ErrorCode: 0, SQLState: 08001
+2026-01-28T21:57:19.172249485Z 2026-01-28T21:57:19.172Z  WARN 1 --- [transactional-outbox-demo] [           main] org.hibernate.orm.jdbc.error             : Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+2026-01-28T21:57:19.179279318Z 2026-01-28T21:57:19.172Z  WARN 1 --- [transactional-outbox-demo] [           main] org.hibernate.orm.jdbc                   : HHH100046: Could not obtain connection to query JDBC database metadata
+2026-01-28T21:57:19.179306443Z 
+2026-01-28T21:57:19.179308443Z org.hibernate.exception.JDBCConnectionException: Unable to obtain isolated JDBC connection [Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.] [n/a]
+2026-01-28T21:57:19.179309985Z  at org.hibernate.exception.internal.SQLStateConversionDelegate.convert(SQLStateConversionDelegate.java:80) ~[hibernate-core-7.2.1.Final.jar!/:7.2.1.Final]
+2026-01-28T21:57:19.179311526Z  at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:34) ~[hibernate-core-7.2.1.Final.jar!/:7.2.1.Final]
+2026-01-28T21:57:19.179312776Z  at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:115) ~[hibernate-core-7.2.1.Final.jar!/:7.2.1.Final]
+2026-01-28T21:57:19.179314276Z  at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:101) ~[hibernate-core-7.2.1.Final.jar!/:7.2.1.Final]
+2026-01-28T21:57:19.179315401Z  at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcIsolationDelegate.delegateWork(JdbcIsolationDelegate.java:51) ~[hibernate-core-7.2.1.Final.jar!/:7.2.1.Final]
+2026-01-28T21:57:19.179316693Z  at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.getJdbcEnvironmentUsingJdbcMetadata(JdbcEnvironmentInitiator.java:366) ~[hibernate-core-7.2.1.Final.jar!/:7.2.1.Final]
+2026-01-28T21:57:19.179317943Z  at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.getJdbcEnvironment(JdbcEnvironmentInitiator.java:143) ~[hibernate-core-7.2.1.Final.jar!/:7.2.1.Final]
+2026-01-28T21:57:19.179319151Z  at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:120) ~[hibernate-core-7.2.1.Final.jar!/:7.2.1.Final]
+2026-01-28T21:57:19.179320360Z  at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:80) ~[hibernate-core-7.2.1.Final.jar!/:7.2.1.Final]
+2026-01-28T21:57:19.179321985Z  at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:133) ~[hibernate-core-7.2.1.Final.jar!/:7.2.1.Final]
+2026-01-28T21:57:19.179323193Z  at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:260) ~[hibernate-core-7.2.1.Final.jar!/:7.2.1.Final]
+2026-01-28T21:57:19.179324401Z  at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:235) ~[hibernate-core-7.2.1.Final.jar!/:7.2.1.Final]
+2026-01-28T21:57:19.179325568Z  at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:212) ~[hibernate-core-7.2.1.Final.jar!/:7.2.1.Final]
+2026-01-28T21:57:19.179333568Z  at org.hibernate.boot.model.relational.Database.<init>(Database.java:44) ~[hibernate-core-7.2.1.Final.jar!/:7.2.1.Final]
+2026-01-28T21:57:19.179334985Z  at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.getDatabase(InFlightMetadataCollectorImpl.java:251) ~[hibernate-core-7.2.1.Final.jar!/:7.2.1.Final]
+2026-01-28T21:57:19.179336235Z  at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:203) ~[hibernate-core-7.2.1.Final.jar!/:7.2.1.Final]
+2026-01-28T21:57:19.179337443Z  at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:170) ~[hibernate-core-7.2.1.Final.jar!/:7.2.1.Final]
+2026-01-28T21:57:19.179338610Z  at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1392) ~[hibernate-core-7.2.1.Final.jar!/:7.2.1.Final]
+2026-01-28T21:57:19.179339776Z  at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.populateSessionFactoryBuilder(EntityManagerFactoryBuilderImpl.java:1472) ~[hibernate-core-7.2.1.Final.jar!/:7.2.1.Final]
+2026-01-28T21:57:19.179341068Z  at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1454) ~[hibernate-core-7.2.1.Final.jar!/:7.2.1.Final]
+2026-01-28T21:57:19.179342276Z  at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:66) ~[spring-orm-7.0.3.jar!/:7.0.3]
+2026-01-28T21:57:19.179343485Z  at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:433) ~[spring-orm-7.0.3.jar!/:7.0.3]
+2026-01-28T21:57:19.179344818Z  at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:416) ~[spring-orm-7.0.3.jar!/:7.0.3]
+2026-01-28T21:57:19.179346068Z  at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396) ~[spring-orm-7.0.3.jar!/:7.0.3]
+2026-01-28T21:57:19.179347235Z  at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:409) ~[spring-orm-7.0.3.jar!/:7.0.3]
+2026-01-28T21:57:19.179348443Z  at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1864) ~[spring-beans-7.0.3.jar!/:7.0.3]
+2026-01-28T21:57:19.179349651Z  at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1813) ~[spring-beans-7.0.3.jar!/:7.0.3]
+2026-01-28T21:57:19.179350901Z  at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:603) ~[spring-beans-7.0.3.jar!/:7.0.3]
+2026-01-28T21:57:19.179352110Z  at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:525) ~[spring-beans-7.0.3.jar!/:7.0.3]
+2026-01-28T21:57:19.179353318Z  at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:333) ~[spring-beans-7.0.3.jar!/:7.0.3]
+2026-01-28T21:57:19.179355485Z  at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371) ~[spring-beans-7.0.3.jar!/:7.0.3]
+2026-01-28T21:57:19.179356776Z  at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:331) ~[spring-beans-7.0.3.jar!/:7.0.3]
+2026-01-28T21:57:19.179357943Z  at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:201) ~[spring-beans-7.0.3.jar!/:7.0.3]
+2026-01-28T21:57:19.179359068Z  at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:976) ~[spring-context-7.0.3.jar!/:7.0.3]
+2026-01-28T21:57:19.179360443Z  at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:620) ~[spring-context-7.0.3.jar!/:7.0.3]
+2026-01-28T21:57:19.179361651Z  at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143) ~[spring-boot-web-server-4.0.2.jar!/:4.0.2]
+2026-01-28T21:57:19.179363276Z  at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:756) ~[spring-boot-4.0.2.jar!/:4.0.2]
+2026-01-28T21:57:19.179364401Z  at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:445) ~[spring-boot-4.0.2.jar!/:4.0.2]
+2026-01-28T21:57:19.179365568Z  at org.springframework.boot.SpringApplication.run(SpringApplication.java:321) ~[spring-boot-4.0.2.jar!/:4.0.2]
+2026-01-28T21:57:19.179366693Z  at org.springframework.boot.SpringApplication.run(SpringApplication.java:1365) ~[spring-boot-4.0.2.jar!/:4.0.2]
+2026-01-28T21:57:19.179367860Z  at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354) ~[spring-boot-4.0.2.jar!/:4.0.2]
+2026-01-28T21:57:19.179381401Z  at com.example.outbox.OutboxApplication.main(OutboxApplication.java:10) ~[!/:0.0.1-SNAPSHOT]
+2026-01-28T21:57:19.179382860Z  at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(Unknown Source) ~[na:na]
+2026-01-28T21:57:19.179384151Z  at java.base/java.lang.reflect.Method.invoke(Unknown Source) ~[na:na]
+2026-01-28T21:57:19.179385318Z  at org.springframework.boot.loader.launch.Launcher.launch(Launcher.java:106) ~[app.jar:0.0.1-SNAPSHOT]
+2026-01-28T21:57:19.179386610Z  at org.springframework.boot.loader.launch.Launcher.launch(Launcher.java:64) ~[app.jar:0.0.1-SNAPSHOT]
+2026-01-28T21:57:19.179387735Z  at org.springframework.boot.loader.launch.JarLauncher.main(JarLauncher.java:40) ~[app.jar:0.0.1-SNAPSHOT]
+2026-01-28T21:57:19.179393860Z Caused by: org.postgresql.util.PSQLException: Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+2026-01-28T21:57:19.179395568Z  at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:373) ~[postgresql-42.7.9.jar!/:42.7.9]
+2026-01-28T21:57:19.179396776Z  at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:57) ~[postgresql-42.7.9.jar!/:42.7.9]
+2026-01-28T21:57:19.179406026Z  at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:290) ~[postgresql-42.7.9.jar!/:42.7.9]
+2026-01-28T21:57:19.179407401Z  at org.postgresql.Driver.makeConnection(Driver.java:448) ~[postgresql-42.7.9.jar!/:42.7.9]
+2026-01-28T21:57:19.179408985Z  at org.postgresql.Driver.connect(Driver.java:298) ~[postgresql-42.7.9.jar!/:42.7.9]
+2026-01-28T21:57:19.179410110Z  at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:144) ~[HikariCP-7.0.2.jar!/:na]
+2026-01-28T21:57:19.179411235Z  at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:373) ~[HikariCP-7.0.2.jar!/:na]
+2026-01-28T21:57:19.179412318Z  at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:210) ~[HikariCP-7.0.2.jar!/:na]
+2026-01-28T21:57:19.179413401Z  at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:488) ~[HikariCP-7.0.2.jar!/:na]
+2026-01-28T21:57:19.179414526Z  at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:576) ~[HikariCP-7.0.2.jar!/:na]
+2026-01-28T21:57:19.179415610Z  at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:97) ~[HikariCP-7.0.2.jar!/:na]
+2026-01-28T21:57:19.179416735Z  at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:111) ~[HikariCP-7.0.2.jar!/:na]
+2026-01-28T21:57:19.179417860Z  at org.hibernate.engine.jdbc.connections.internal.DataSourceConnectionProvider.getConnection(DataSourceConnectionProvider.java:137) ~[hibernate-core-7.2.1.Final.jar!/:7.2.1.Final]
+2026-01-28T21:57:19.179419110Z  at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:508) ~[hibernate-core-7.2.1.Final.jar!/:7.2.1.Final]
+2026-01-28T21:57:19.179420360Z  at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcIsolationDelegate.delegateWork(JdbcIsolationDelegate.java:48) ~[hibernate-core-7.2.1.Final.jar!/:7.2.1.Final]
+2026-01-28T21:57:19.179421568Z  ... 42 common frames omitted
+2026-01-28T21:57:19.179422526Z Caused by: java.net.ConnectException: Connection refused
+2026-01-28T21:57:19.179423568Z  at java.base/sun.nio.ch.Net.pollConnect(Native Method) ~[na:na]
+2026-01-28T21:57:19.179424610Z  at java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source) ~[na:na]
+2026-01-28T21:57:19.179425693Z  at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(Unknown Source) ~[na:na]
+2026-01-28T21:57:19.179426776Z  at java.base/sun.nio.ch.NioSocketImpl.connect(Unknown Source) ~[na:na]
+2026-01-28T21:57:19.179427818Z  at java.base/java.net.SocksSocketImpl.connect(Unknown Source) ~[na:na]
+2026-01-28T21:57:19.179428860Z  at java.base/java.net.Socket.connect(Unknown Source) ~[na:na]
+2026-01-28T21:57:19.179429985Z  at org.postgresql.core.PGStream.createSocket(PGStream.java:261) ~[postgresql-42.7.9.jar!/:42.7.9]
+2026-01-28T21:57:19.179431110Z  at org.postgresql.core.PGStream.<init>(PGStream.java:122) ~[postgresql-42.7.9.jar!/:42.7.9]
+2026-01-28T21:57:19.179433318Z  at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:146) ~[postgresql-42.7.9.jar!/:42.7.9]
+2026-01-28T21:57:19.179434526Z  at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:289) ~[postgresql-42.7.9.jar!/:42.7.9]
+2026-01-28T21:57:19.179435693Z  ... 56 common frames omitted
+2026-01-28T21:57:19.179436693Z 
+2026-01-28T21:57:19.214414818Z 2026-01-28T21:57:19.214Z  WARN 1 --- [transactional-outbox-demo] [           main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-01-28T21:57:19.233893360Z 2026-01-28T21:57:19.233Z  INFO 1 --- [transactional-outbox-demo] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+2026-01-28T21:57:19.233929693Z  Database JDBC URL [undefined/unknown]
+2026-01-28T21:57:19.233932151Z  Database driver: undefined/unknown
+2026-01-28T21:57:19.233933443Z  Database dialect: PostgreSQLDialect
+2026-01-28T21:57:19.233934610Z  Database version: 13.0
+2026-01-28T21:57:19.233935735Z  Default catalog/schema: unknown/unknown
+2026-01-28T21:57:19.233936860Z  Autocommit mode: undefined/unknown
+2026-01-28T21:57:19.233937860Z  Isolation level: NONE [default NONE]
+2026-01-28T21:57:19.233938943Z  JDBC fetch size: undefined/unknown
+2026-01-28T21:57:19.233940110Z  Pool: DataSourceConnectionProvider
+2026-01-28T21:57:19.233941693Z  Minimum pool size: undefined/unknown
+2026-01-28T21:57:19.233942818Z  Maximum pool size: undefined/unknown
+2026-01-28T21:57:20.875015694Z 2026-01-28T21:57:20.874Z  INFO 1 --- [transactional-outbox-demo] [           main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-01-28T21:57:20.890066069Z 2026-01-28T21:57:20.889Z  INFO 1 --- [transactional-outbox-demo] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-01-28T21:57:21.057060027Z 2026-01-28T21:57:21.056Z  INFO 1 --- [transactional-outbox-demo] [           main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-01-28T21:57:21.311892111Z 2026-01-28T21:57:21.311Z  WARN 1 --- [transactional-outbox-demo] [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-01-28T21:57:21.715332986Z 2026-01-28T21:57:21.715Z  INFO 1 --- [transactional-outbox-demo] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/'
+2026-01-28T21:57:21.733534528Z 2026-01-28T21:57:21.733Z  INFO 1 --- [transactional-outbox-demo] [           main] com.example.outbox.OutboxApplication     : Started OutboxApplication in 10.931 seconds (process running for 12.981)
+
+
