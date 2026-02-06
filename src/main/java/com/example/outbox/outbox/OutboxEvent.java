@@ -13,7 +13,7 @@ import lombok.Setter;
 import org.hibernate.annotations.JdbcTypeCode;
 import org.hibernate.type.SqlTypes;
 
-import java.time.OffsetDateTime;
+import java.time.Instant;
 import java.util.UUID;
 
 @Entity
@@ -45,6 +45,5 @@ public class OutboxEvent {
 	private String payload;
 
 	@Column(name = "timestamp", nullable = false)
-	private OffsetDateTime timestamp = OffsetDateTime.now();
+	private Instant timestamp = Instant.now();
 }
-

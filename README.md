@@ -5,6 +5,10 @@ This project demonstrates the **Transactional Outbox pattern** using:
 - **Spring Boot** (writes business data + outbox event atomically in one DB transaction)
 - **PostgreSQL** (stores `orders` + `outbox` tables)
 - **Debezium Outbox Event Router** (runs in **Kafka Connect** outside the app; tails Postgres WAL and publishes outbox events to Kafka)
+- SMT (Single Message Transform) rewrites each change event into an outbox-style message (topic routing, key/payload mapping, headers, timestamps).
+
+## NOTE: SMT = Single Message Transform in Kafka Connect.
+It’s a lightweight transformation applied to each record as it moves through Connect. In this project, the Debezium Outbox Event Router is an SMT that rewrites the Debezium CDC record into an event-style message (topic routing, key/payload mapping, headers, timestamps).
 
 The Spring Boot app **does not publish to Kafka directly**. It only inserts into the `outbox` table in the same transaction as the business write.
 
@@ -85,5 +89,7 @@ Tables:
 
 - **Kafka Connect plugin**: The `docker-compose.yml` starts Kafka Connect, but it does not automatically install Debezium connector plugins.
   - If your Connect image doesn’t already include Debezium, you’ll need to add the Debezium Postgres connector + outbox SMT to the Connect plugin path.
+- **Outbox timestamp field**: `outbox.timestamp` is a `TIMESTAMP`, and the connector config sets `"transforms.outbox.table.field.event.timestamp": "timestamp"`.
+  - If you change that column to `BIGINT`, the outbox SMT will fail because it expects a logical timestamp or epoch millis with the expected schema.
+  - If the SMT crashes with a timestamp type error, either revert the column to `TIMESTAMP` or remove the SMT timestamp mapping.
 - **Tests** run with an in-memory H2 DB via `src/test/resources/application-test.yml`.
-

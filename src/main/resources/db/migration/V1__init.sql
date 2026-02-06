@@ -13,7 +13,7 @@ CREATE TABLE IF NOT EXISTS outbox (
     aggregateid VARCHAR(255) NOT NULL,
     type VARCHAR(255) NOT NULL,
     payload JSONB NOT NULL,
-    "timestamp" TIMESTAMPTZ NOT NULL DEFAULT NOW()
+    "timestamp" TIMESTAMP NOT NULL
 );
 
 CREATE INDEX IF NOT EXISTS idx_outbox_timestamp ON outbox("timestamp");
