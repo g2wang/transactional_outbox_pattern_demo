@@ -1,21 +1,21 @@
 version: '3.8'
 
 services:
-  app:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    ports:
-      - "8080:8080"
-    environment:
-      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/outboxdb
-      SPRING_DATASOURCE_USERNAME: postgres
-      SPRING_DATASOURCE_PASSWORD: postgres
-    depends_on:
-      postgres:
-        condition: service_healthy
-    networks:
-      - outbox_network
+#  app:
+#    build:
+#      context: .
+#      dockerfile: Dockerfile
+#    ports:
+#      - "8080:8080"
+#    environment:
+#      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/outboxdb
+#      SPRING_DATASOURCE_USERNAME: postgres
+#      SPRING_DATASOURCE_PASSWORD: postgres
+#    depends_on:
+#      postgres:
+#        condition: service_healthy
+#    networks:
+#      - outbox_network
 
   postgres:
     image: postgres:16
@@ -36,31 +36,25 @@ services:
     volumes:
       - pgdata:/var/lib/postgresql/data
 
-  zookeeper:
-    image: confluentinc/cp-zookeeper:7.6.0
-    environment:
-      ZOOKEEPER_CLIENT_PORT: 2181
-    ports:
-      - "2181:2181"
-    networks:
-      - outbox_network
-
   kafka:
-    image: confluentinc/cp-kafka:7.6.0
+    image: confluentinc/cp-kafka:8.1.1
     container_name: transactional_outbox_pattern_demo-kafka-1
-    depends_on:
-      - zookeeper
     ports:
       - "9092:9092"
     environment:
-      KAFKA_BROKER_ID: 1
-      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_NODE_ID: 1
+      KAFKA_PROCESS_ROLES: broker,controller
+      KAFKA_CONTROLLER_LISTENER_NAMES: CONTROLLER
+      KAFKA_CONTROLLER_QUORUM_VOTERS: 1@kafka:9094
       # Localhost for your IDE, 'kafka' for other containers
       KAFKA_ADVERTISED_LISTENERS: LISTENER_DOCKER://kafka:9093,LISTENER_HOST://localhost:9092
-      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: LISTENER_DOCKER:PLAINTEXT,LISTENER_HOST:PLAINTEXT
+      KAFKA_LISTENERS: CONTROLLER://kafka:9094,LISTENER_DOCKER://kafka:9093,LISTENER_HOST://0.0.0.0:9092
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: CONTROLLER:PLAINTEXT,LISTENER_DOCKER:PLAINTEXT,LISTENER_HOST:PLAINTEXT
       KAFKA_INTER_BROKER_LISTENER_NAME: LISTENER_DOCKER
       KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
       KAFKA_AUTO_CREATE_TOPICS_ENABLE: "true"
+      # Replace with a stable base64 UUID from "bin/kafka-storage.sh random-uuid" if needed
+      CLUSTER_ID: MkU3OEVBNTcwNTJENDM2Qk
     networks:
       - outbox_network
     healthcheck:
@@ -70,7 +64,7 @@ services:
       retries: 5
 
   debezium:
-    image: debezium/connect:2.5
+    image: debezium/connect:2.7.3.Final
     depends_on:
       kafka:
         condition: service_healthy

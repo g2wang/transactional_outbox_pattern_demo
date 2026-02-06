@@ -18,13 +18,12 @@
 
     "transforms.outbox.table.field.event.id": "id",
     "transforms.outbox.table.field.event.key": "aggregateid",
-    "transforms.outbox.table.field.event.type": "type",
     "transforms.outbox.table.field.event.payload": "payload",
-    "transforms.outbox.table.field.event.timestamp": "timestamp",
-    "transforms.outbox.table.field.event.aggregate.type": "aggregatetype",
+    "transforms.outbox.table.fields.additional.placement": "type:header:eventType",
 
-    "transforms.outbox.route.topic.regex": ".*",
-    "transforms.outbox.route.topic.pattern": "events.order.${routedByValue:aggregatetype}.${routedByValue:type}",
+    "transforms.outbox.route.by.field": "type",
+    "transforms.outbox.route.topic.regex": "(?<routedByValue>.*)",
+    "transforms.outbox.route.topic.replacement": "events.order.Order.${routedByValue}",
 
     "value.converter": "org.apache.kafka.connect.json.JsonConverter",
     "value.converter.schemas.enable": "false",
